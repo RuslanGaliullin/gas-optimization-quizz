@@ -31,16 +31,17 @@ contract Loops is ILoops {
     }
 }
 
+// Ну или можно unchecked, не понятно, что хочется: чтобы считалось занчение в переменной или чтобы прошлось по циклу
 contract LoopsOptimized is ILoops {
     function loopFor() public pure {
-        /* YOUR SOLUTION GOES HERE */
+        uint256 sum = (20 * 19) / 2; 
     }
 
     function loopWhile() public pure {
-        /* YOUR SOLUTION GOES HERE */
+        uint256 sum = (10 * 9) / 2;
     }
 
     function loopDoWhile() public pure {
-        /* YOUR SOLUTION GOES HERE */
+        uint256 sum = (10 * 9) / 2;
     }
 }

@@ -14,7 +14,13 @@ contract NestedIf is INestedIf {
 }
 
 contract NestedIfOptimized is INestedIf {
-    function call(uint256 number) public pure returns (bool flag) {
-        /* YOUR SOLUTION GOES HERE */
+    function call(uint256 number) public pure returns (bool) {
+        if (number==50){
+            return false;
+        }
+        if (number > 0 && number < 100){
+            return true;
+        }
+        return false;
     }
 }

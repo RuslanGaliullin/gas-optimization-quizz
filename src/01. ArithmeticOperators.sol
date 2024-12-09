@@ -33,7 +33,11 @@ contract AdditionOptimized is IAddition {
     uint256 number = 1;
 
     function addition(uint256 value) public {
-        /* YOUR SOLUTION GOES HERE */
+        assembly {
+            let num := sload(0)
+            num := add(num, value)
+            sstore(0, num)
+        }
     }
 }
 
@@ -41,16 +45,20 @@ contract SubtractionOptimized is ISubtraction {
     uint256 number = 100;
 
     function subtraction(uint256 value) public {
-        /* YOUR SOLUTION GOES HERE */
+        assembly {
+            let num := sload(0)
+            num := sub(num, value)
+            sstore(0, num)
+        }
     }
 }
 
 contract DivisionOptimized is IDivision {
     function divisionBy2(uint256 number) public pure returns (uint256) {
-        /* YOUR SOLUTION GOES HERE */
+        return number >> 1;
     }
 
     function divisionBy128(uint256 number) public pure returns (uint256) {
-        /* YOUR SOLUTION GOES HERE */
+        return number >> 7;
     }
 }
